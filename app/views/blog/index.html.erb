@@ -1,0 +1,48 @@
+<h1 align="center"> Blogs </h1>
+
+<%= link_to "Create new Post", new_blog_path%>
+
+<br>
+
+<table align="center">
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Content</th>
+    </tr>
+  </thead>
+  <body>
+    <% @blogs.each do |blog| %>
+      <tr>
+        <td><%= blog.title %></td>
+        <td><%= blog.content %></td>
+        <td><%= link_to "Show", blog_path(blog.id)%></td>
+        <td><%= link_to "Edit", edit_blog_path(blog.id)%></td>
+        <td><%= link_to "Delete", blog_path(blog.id), method: :delete, data: {confirm:"Esta seguro de eliminar"}%></td>
+      </tr>
+    <%end%>
+  </body>
+</table>
+
+
+
+
+
+
+<!-- <p>blog desde index</p>
+
+
+<!-- Header
+     Partial / Helper / componente
+-->
+  <%# <%= #render 'blog/partials/header' %>
+
+<!--Lista de articulos-->
+
+<!-- <a href="welcome/contact_us" class="link-to-contact">Contactanos</a> -->
+
+<%# <%= #link_to("Contactanos", welcome_contact_us_path, class:"link-to-contact", id: "id-css") %>
+
+<%# <%= #link_to("Prices", welcome_prices_url) %>
+
+<!-- Barra lateral -->

@@ -1,0 +1,20 @@
+<!-- <h1>Formulario desde new</h1>
+
+<form class="" action="index.html" method="post">
+  <input type="text" name="" value="">
+  <input type="submit" name="" value="">
+</form> -->
+
+<%= form_for @blog, url: blog_index_path, method: :post do |f| %>
+  <div>
+    <%= f.label :Title %>
+    <%= f.text_field :title %>
+  </div>
+  <div>
+    <%= f.label :Content %>
+    <%= f.text_area :content %>
+  </div>
+  <div>
+    <%= f.submit %>
+  </div>
+<%end%>
